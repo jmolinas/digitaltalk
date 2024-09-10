@@ -47,7 +47,15 @@ class TeHelper
 
         $difference = $due_time->diffInHours($created_at);
 
-
+        switch (true) {
+            case $difference <= 90:
+                $time = $due_time;
+                break;
+            
+            default:
+                $time = $due_time->subHours(48);
+                break;
+        }
         if($difference <= 90)
             $time = $due_time;
         elseif ($difference <= 24) {

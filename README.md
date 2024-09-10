@@ -25,6 +25,38 @@ X. A readme with:   Your thoughts about the code. What makes it amazing code. Or
 
 And 
 
+Ok Code, if the code was writter years ago
+I would right the code with separate request extending FormRequest. Custom request contains validation rules
+  ```sh
+  <?php
+
+  namespace App\Http\Requests\Auth;
+
+  use App\Http\FormRequest;
+
+  class LoginRequest extends FormRequest
+  {
+      protected function rules(): array
+      {
+          return [
+              'email' => 'required|email',
+              'password' => 'required',
+          ];
+      }
+  }
+  ```
+
+  * Need refactoring of formatting and structure
+  * Removing of commented out codes
+  * Removing of unused variables
+  * Too many else if statements
+  * Nested loopings
+  * Removed extensive processing of data from controller to Repository
+  * Separate Repository based on models
+  * If envolves many model or Repository create service
+  * Proper doc block in each function
+  * Implement dependency injection
+
 Y.  Refactor it if you feel it needs refactoring. The more love you put into it. The easier for us to asses your thoughts, code principles etc
 
 
